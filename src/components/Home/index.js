@@ -4,7 +4,7 @@ import Shelf from '../Shelf';
 import Filter from '../Shelf/Filter';
 import FloatCart from '../FloatCart';
 
-class App extends Component {
+class Home extends Component {
   render() {
     return (
       <React.Fragment>
@@ -18,4 +18,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Home;
