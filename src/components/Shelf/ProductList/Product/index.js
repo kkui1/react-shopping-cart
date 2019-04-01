@@ -30,7 +30,7 @@ const Product = ({ product, addProduct }) => {
   return (
     <div
       className="shelf-item"
-      onClick={() => addProduct(product)}
+      // onClick={() => addProduct(product)}
       data-sku={product.sku}
     >
       {product.isFreeShipping && (
@@ -50,7 +50,7 @@ const Product = ({ product, addProduct }) => {
         </div>
         {productInstallment}
       </div>
-      <div className="shelf-item__buy-btn">Add to cart</div>
+      <div className="shelf-item__buy-btn" onClick={() => addProduct(product)}>Add to cart</div>
     </div>
   );
 };
