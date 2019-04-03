@@ -11,21 +11,21 @@ const Product = ({ product, addProduct }) => {
 
   let formattedPrice = formatPrice(product.price, product.currencyId);
 
-  let productInstallment;
+  // let productInstallment;
 
-  if (!!product.installments) {
-    const installmentPrice = product.price / product.installments;
+  // if (!!product.installments) {
+  //   const installmentPrice = product.price / product.installments;
 
-    productInstallment = (
-      <div className="installment">
-        <span>or {product.installments} x</span>
-        <b>
-          {product.currencyFormat}
-          {formatPrice(installmentPrice, product.currencyId)}
-        </b>
-      </div>
-    );
-  }
+  //   productInstallment = (
+  //     <div className="installment">
+  //       <span>or {product.installments} x</span>
+  //       <b>
+  //         {product.currencyFormat}
+  //         {formatPrice(installmentPrice, product.currencyId)}
+  //       </b>
+  //     </div>
+  //   );
+  // }
 
   return (
     <div
@@ -48,7 +48,7 @@ const Product = ({ product, addProduct }) => {
           <b>{formattedPrice.substr(0, formattedPrice.length - 3)}</b>
           <span>{formattedPrice.substr(formattedPrice.length - 3, 3)}</span>
         </div>
-        {productInstallment}
+        {/* {productInstallment} */}
       </div>
       <div className="shelf-item__buy-btn" onClick={() => addProduct(product)}>Add to cart</div>
     </div>
