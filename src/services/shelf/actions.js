@@ -20,7 +20,7 @@ export const fetchProducts = (filters, sortBy, callback) => dispatch => {
   return axios
     .get(productsAPI)
     .then(res => {
-      let { products } = res.data;
+      let products  = res.data;
 
       if (!!filters && filters.length > 0) {
         products = products.filter(p =>

@@ -9,7 +9,7 @@ import { addProduct } from '../../../../services/cart/actions';
 const Product = ({ product, addProduct }) => {
   product.quantity = 1;
 
-  let formattedPrice = formatPrice(product.price, product.currencyId);
+  let formattedPrice = formatPrice(product.volumePrice && product.volumePrice.find(e=>e.qty === 1).unitPrice ? product.volumePrice.find(e=>e.qty === 1).unitPrice : 100, product.currencyId);
 
   // let productInstallment;
 
@@ -31,17 +31,17 @@ const Product = ({ product, addProduct }) => {
     <div
       className="shelf-item"
       // onClick={() => addProduct(product)}
-      data-sku={product.sku}
+      data-sku={product.SKU}
     >
-      {product.isFreeShipping && (
+      {/* {product.isFreeShipping && (
         <div className="shelf-stopper">Free shipping</div>
-      )}
+      )} */}
       <Thumb
         classes="shelf-item__thumb"
-        src={require(`../../../../static/products/${product.sku}_1.jpg`)}
-        alt={product.title}
+        src={product.pic[0] ? product.pic[0].url : undefined}
+        alt={product.name}
       />
-      <p className="shelf-item__title">{product.title}</p>
+      <p className="shelf-item__title">{product.name}</p>
       <div className="shelf-item__price">
         <div className="val">
           <small>{product.currencyFormat}</small>
